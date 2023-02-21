@@ -23,6 +23,7 @@ import com.udacity.project4.locationreminders.RemindersActivity
 class AuthenticationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthenticationBinding
+    private lateinit var mAuth: FirebaseAuth
 
     companion object {
         const val SIGN_IN_RESULT_CODE = 1001
@@ -34,8 +35,13 @@ class AuthenticationActivity : AppCompatActivity() {
             this,
             R.layout.activity_authentication
         )
-
         binding.lifecycleOwner = this
+
+        mAuth= FirebaseAuth.getInstance()
+
+        if(mAuth.currentUser!= null) {
+            startReminderActivity()
+        }
 
         setListeners()
 

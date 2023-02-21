@@ -132,5 +132,4 @@ dependencies {
 
     //Firebase Auth
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
-
 }
